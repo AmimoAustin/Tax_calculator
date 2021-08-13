@@ -1,16 +1,15 @@
-# This is a sample Python script.
+import tax_calculator as tc
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+while True:
+    try:
+        name = str(input("Enter your name: \n"))
+        try:
+            age = int(input("Enter your age: \n"))
+            gross_pay = int(input("Enter your pay: \n"))
+            net_pay = tc.total_calc_tax(gross_pay, age)
+            print(name, "your take away home salary is ,", "Ksh:", net_pay)
+        except ValueError:
+            print("Invalid Data")
+    except KeyboardInterrupt:
+        print('The program was stopped by the user')
+        exit()
